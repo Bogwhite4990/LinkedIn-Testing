@@ -1,7 +1,7 @@
 const username_email = 't@t.com';
 const password_pwd = 'Tester123!';
-const first_name = 'Adi';
-const last_name = 'Tata';
+const first_name = 'John';
+const last_name = 'Doe';
 
 describe('Login Functionality Test', () => {
     
