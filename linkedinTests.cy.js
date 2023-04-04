@@ -1,7 +1,7 @@
-const username_email = 't@t.com';
-const password_pwd = 'Tester123!';
-const first_name = 'John';
-const last_name = 'Doe';
+const usernameEmail = 't@t.com';
+const passwordPwd = 'Tester123!';
+const firstName = 'John';
+const lastName = 'Doe';
 
 describe('Login Functionality Test', () => {
     
@@ -9,8 +9,8 @@ describe('Login Functionality Test', () => {
   it('Visits LinkedIn and logs in successfully', () => {
     cy.visit('https://www.linkedin.com/');
 
-    cy.get(':nth-child(1) > .flex-col > .text-input').type(username_email);
-    cy.get(':nth-child(2) > .flex-col > .text-input').type(password_pwd);
+    cy.get(':nth-child(1) > .flex-col > .text-input').type(usernameEmail);
+    cy.get(':nth-child(2) > .flex-col > .text-input').type(passwordPwd);
     cy.get('.justify-between > .btn-md').click();
 
     cy.url().should('include', '/feed');
@@ -25,8 +25,8 @@ describe('Logout Functionality Test', () => {
     it('Logs in and logs out successfully', () => {
       cy.visit('https://www.linkedin.com/');
   
-      cy.get(':nth-child(1) > .flex-col > .text-input').type(username_email);
-      cy.get(':nth-child(2) > .flex-col > .text-input').type(password_pwd);
+      cy.get(':nth-child(1) > .flex-col > .text-input').type(usernameEmail);
+      cy.get(':nth-child(2) > .flex-col > .text-input').type(passwordPwd);
       cy.get('.justify-between > .btn-md').click();
   
       cy.url().should('include', '/feed');
@@ -46,8 +46,8 @@ describe('Profile Editing and Saving Functionality Test', () => {
     it('Logs in and edits profile information', () => {
       cy.visit('https://www.linkedin.com/');
   
-      cy.get(':nth-child(1) > .flex-col > .text-input').type(username_email);
-      cy.get(':nth-child(2) > .flex-col > .text-input').type(password_pwd);
+      cy.get(':nth-child(1) > .flex-col > .text-input').type(usernameEmail);
+      cy.get(':nth-child(2) > .flex-col > .text-input').type(passwordPwd);
       cy.get('.justify-between > .btn-md').click();
   
       cy.url().should('include', '/feed');
@@ -67,8 +67,8 @@ describe('Profile Editing and Saving Functionality Test', () => {
       cy.wait(3000);
 
       // Update the first name and last name fields
-      cy.get('#single-line-text-form-component-profileEditFormElement-TOP-CARD-profile-ACoAAEJPgrABdSaXKYlypnqoWnIjTlLWB0sg-O8-firstName').clear().type(first_name);
-      cy.get('#single-line-text-form-component-profileEditFormElement-TOP-CARD-profile-ACoAAEJPgrABdSaXKYlypnqoWnIjTlLWB0sg-O8-lastName').clear().type(last_name);
+      cy.get('#single-line-text-form-component-profileEditFormElement-TOP-CARD-profile-ACoAAEJPgrABdSaXKYlypnqoWnIjTlLWB0sg-O8-firstName').clear().type(firstName);
+      cy.get('#single-line-text-form-component-profileEditFormElement-TOP-CARD-profile-ACoAAEJPgrABdSaXKYlypnqoWnIjTlLWB0sg-O8-lastName').clear().type(lastName);
       
       // Wait time
       cy.wait(3000);
@@ -80,7 +80,7 @@ describe('Profile Editing and Saving Functionality Test', () => {
       cy.wait(3000);
   
       // Verify that the changes were saved successfully
-      cy.get('.text-heading-xlarge').contains(`${first_name} ${last_name}`);
+      cy.get('.text-heading-xlarge').contains(`${firstName} ${lastName}`);
     });
   });
 
@@ -88,8 +88,8 @@ describe('Search Functionality Test', () => {
     it('Logs in and searches for connections and profiles', () => {
       cy.visit('https://www.linkedin.com/');
   
-      cy.get(':nth-child(1) > .flex-col > .text-input').type(username_email);
-      cy.get(':nth-child(2) > .flex-col > .text-input').type(password_pwd);
+      cy.get(':nth-child(1) > .flex-col > .text-input').type(usernameEmail);
+      cy.get(':nth-child(2) > .flex-col > .text-input').type(passwordPwd);
       cy.get('.justify-between > .btn-md').click();
   
       cy.url().should('include', '/feed');
